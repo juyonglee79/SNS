@@ -6,8 +6,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-public class UserFragment extends Fragment {
-    public UserFragment()
+public class PostFragment extends Fragment {
+    public PostFragment()
     {
     }
 
@@ -19,7 +19,7 @@ public class UserFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
     {
-        View layout = (View) inflater.inflate(R.layout.fragment_user, container, false);
-        return layout;
+        View view = (View) inflater.inflate(R.layout.fragment_posting, container, false);
+        return view;
     }
 }
