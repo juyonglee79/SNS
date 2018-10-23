@@ -1,14 +1,203 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".UserFragment">
+    tools:context=".Fragment.UserFragment">
+
+    <ImageView
+        android:id="@+id/profile_img"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="17dp"
+        android:background="@drawable/profile_img"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
+        android:id="@+id/posting_count"
+        android:layout_width="45dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="17dp"
+        android:text="505"
+        android:textColor="#000000"
+        android:textSize="17sp"
+        app:layout_constraintStart_toEndOf="@+id/profile_img"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/posting"
+        android:layout_width="40dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="39dp"
+        android:layout_marginTop="0dp"
+        android:text="게시물"
+        android:textColor="#808080"
+        android:textSize="12sp"
+        app:layout_constraintStart_toEndOf="@+id/profile_img"
+        app:layout_constraintTop_toBottomOf="@+id/posting_count" />
+
+    <TextView
+        android:id="@+id/follower_count"
+        android:layout_width="40dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="55dp"
+        android:layout_marginTop="17dp"
+        android:text="100"
+        android:textColor="#000000"
+        android:textSize="17sp"
+        app:layout_constraintStart_toEndOf="@+id/posting_count"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/follower"
+        android:layout_width="40dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="61dp"
+        android:layout_marginTop="0dp"
+        android:text="팔로워"
+        android:textColor="#808080"
+        android:textSize="12sp"
+        app:layout_constraintStart_toEndOf="@+id/posting"
+        app:layout_constraintTop_toBottomOf="@+id/follower_count" />
+
+    <TextView
+        android:id="@+id/following_count"
+        android:layout_width="40dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="55dp"
+        android:layout_marginTop="17dp"
+        android:text="104"
+        android:textColor="#000000"
+        android:textSize="17sp"
+        app:layout_constraintStart_toEndOf="@+id/follower_count"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/following"
+        android:layout_width="40dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="55dp"
+        android:layout_marginTop="0dp"
+        android:text="팔로워"
+        android:textColor="#808080"
+        android:textSize="12sp"
+        app:layout_constraintStart_toEndOf="@+id/follower"
+        app:layout_constraintTop_toBottomOf="@+id/following_count" />
+
+    <Button
+        android:id="@+id/profile_setting"
+        android:layout_width="240dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="3dp"
+        android:background="@drawable/btn_setting"
+        android:text="프로필 수정"
+        android:textColor="#000000"
+        android:textSize="17sp"
+        app:layout_constraintStart_toEndOf="@+id/profile_img"
+        app:layout_constraintTop_toBottomOf="@+id/follower" />
+
+    <ImageButton
+        android:id="@+id/normal_setting"
+        android:layout_width="55dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="3dp"
+        android:layout_marginStart="3dp"
+        android:background="@drawable/btn_setting"
+        android:src="@drawable/ic_setting"
+        android:textColor="#000000"
+        android:textSize="17sp"
+        app:layout_constraintStart_toEndOf="@+id/profile_setting"
+        app:layout_constraintTop_toBottomOf="@+id/following" />
+
+    <TextView
+        android:id="@+id/name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="sdfadsf"
-        android:textSize="20sp"/>
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="25dp"
+        android:text="Hue williams"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/profile_img" />
+
+    <TextView
+        android:id="@+id/introduce"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="4dp"
+        android:text="안녕하세요 신우에요~"
+        android:textColor="#000000"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/name" />
+
+    <TextView
+        android:id="@+id/line_tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/line"
+        app:layout_constraintTop_toBottomOf="@+id/introduce" />
+
+    <ImageView
+        android:id="@+id/first_shareing_post"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="70dp"
+        android:background="@drawable/profile_img"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/line_tv" />
+
+    <TextView
+        android:id="@+id/sharing_help_tv1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="30dp"
+        android:text="사진 및 동영상 공유"
+        android:textColor="#000000"
+        android:textSize="25sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/first_shareing_post" />
+
+    <TextView
+        android:id="@+id/sharing_help_tv2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="20dp"
+        android:text="사진과 동영상을 공유하면 프로필에 표시됩니다."
+        android:textColor="#000000"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sharing_help_tv1" />
+
+    <TextView
+        android:id="@+id/sharing_help_tv3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="35dp"
+        android:text="첫 번째 사진이나 동영상을 공유해보세요"
+        android:textColor="#4b89dc"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sharing_help_tv2" />
+
 
 </android.support.constraint.ConstraintLayout>
