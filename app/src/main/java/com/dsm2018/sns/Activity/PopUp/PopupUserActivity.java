@@ -1,4 +1,4 @@
-package com.dsm2018.sns;
+package com.dsm2018.sns.Activity;
 
 import android.app.Activity;
 import android.content.Intent;

@@ -1,4 +1,4 @@
-package com.dsm2018.sns;
+package com.dsm2018.sns.Activity;
 
 import android.app.Activity;
 import android.content.Context;
@@ -8,6 +8,8 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.Window;
 import android.widget.TextView;
+
+import com.dsm2018.sns.R;
 
 public class PopupOthersActivity extends Activity {
     TextView txtText;

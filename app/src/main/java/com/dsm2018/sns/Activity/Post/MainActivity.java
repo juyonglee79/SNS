@@ -1,4 +1,4 @@
-package com.dsm2018.sns;
+package com.dsm2018.sns.Activity;
 
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
@@ -15,6 +15,7 @@ import android.util.Log;
 
 import com.dsm2018.sns.Fragment.PostFragment;
 import com.dsm2018.sns.Fragment.UserFragment;
+import com.dsm2018.sns.R;
 
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;

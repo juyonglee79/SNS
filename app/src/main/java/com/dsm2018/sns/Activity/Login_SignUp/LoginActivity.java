@@ -1,22 +1,24 @@
-package com.dsm2018.sns;
+package com.dsm2018.sns.Activity;
 
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
+import com.dsm2018.sns.LoginCallback;
+import com.dsm2018.sns.R;
 import com.facebook.CallbackManager;
 import com.facebook.login.LoginManager;
-import com.facebook.login.widget.LoginButton;
 
 import java.util.Arrays;
 
 public class LoginActivity extends AppCompatActivity {
 
     private Context mContext;
+    private TextView signin_tv;
     private Button facebook_login, login;
     private LoginCallback mLoginCallback;
     private CallbackManager mCallbackManager;
@@ -46,6 +48,14 @@ public class LoginActivity extends AppCompatActivity {
                 loginManager.logInWithReadPermissions(LoginActivity.this,
                         Arrays.asList("public_profile", "email"));
                 loginManager.registerCallback(mCallbackManager, mLoginCallback);
+            }
+        });
+        signin_tv = (TextView) findViewById(R.id.signin_tv);
+        signin_tv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(LoginActivity.this, SignupActivity.class);
+                startActivity(intent);
             }
         });
     }

@@ -1,9 +1,11 @@
-package com.dsm2018.sns;
+package com.dsm2018.sns.Activity;
 
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+
+import com.dsm2018.sns.R;
 
 public class SplashActivity extends Activity {
 
