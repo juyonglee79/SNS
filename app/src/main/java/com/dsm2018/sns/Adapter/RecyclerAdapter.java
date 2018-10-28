@@ -21,10 +21,12 @@ import static com.facebook.FacebookSdk.getApplicationContext;
 public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ItemViewHolder> {
     ArrayList<RecyclerItem> mItems;
     Context context;
+    OnItemClick onItemClick;
 
-    public RecyclerAdapter(ArrayList<RecyclerItem> items) {
+    public RecyclerAdapter(ArrayList<RecyclerItem> items,OnItemClick onItemClick) {
         mItems = items;
         this.context = getApplicationContext();
+        this.onItemClick=onItemClick;
     }
 
     public interface OnItemClickListener {
@@ -80,6 +82,26 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ItemVi
 //                holder.like.setImageResource(R.drawable.ic_like_unclicked);
 //            }
 //        });
+
+
+
+        //jungHyeon
+        holder.comment_who.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onItemClick.onWhoClicked();
+            }
+        });
+        //jungHyeon
+        holder.like.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onItemClick.onLikeClicked(true,holder.like);
+                //  OnItemClick override 해서 구현 하는 곳 에서 true false 값으로 클릭이 되어있는지 확인하고 이미지 세팅해주면 됨
+                //
+            }
+        });
+
     }
 
     @Override
@@ -117,5 +139,16 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ItemVi
             comment_contents = (TextView) itemView.findViewById(R.id.comment_contents);
 
         }
+
+        public void bindTo(RecyclerItem item){
+            //binding
+        }
+
+    }
+
+    interface OnItemClick{
+        void onProfileClicked();
+        void onWhoClicked();
+        void onLikeClicked(Boolean clickable,ImageView like);
     }
 }
